@@ -1,174 +1,157 @@
-const liveServices = [
+
+import AdsterraFrame from "@/components/AdsterraFrame";
+
+const sportsLinks = [
   {
-    title: "Tamasha TV",
-    subtitle: "Official live sports & entertainment",
-    label: "TAMASHA",
-    href: "https://tamashaweb.com/",
+    name: "Tamasha",
+    description: "Sports aur live entertainment ke liye.",
+    url: "https://tamashaweb.com/",
+    category: "Sports & Entertainment",
   },
   {
-    title: "Live Match Updates",
-    subtitle: "Match schedules, scores & updates",
-    label: "LIVE UPDATES",
-    href: "https://www.espncricinfo.com/",
+    name: "ESPN Cricinfo",
+    description: "Cricket scores, match updates aur news.",
+    url: "https://www.espncricinfo.com/",
+    category: "Cricket Scores & News",
   },
   {
-    title: "Official Sports Channels",
-    subtitle: "Find authorized live match coverage",
-    label: "SPORTS",
-    href: "https://www.pcb.com.pk/",
+    name: "Pakistan Cricket Board",
+    description: "Pakistan cricket ki official website.",
+    url: "https://www.pcb.com.pk/",
+    category: "Official Cricket Updates",
   },
 ];
 
-function AdSlot({
-  label,
-  className = "",
-}: {
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      aria-label="Advertisement"
-      className={`flex min-h-[90px] items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white p-3 text-center ${className}`}
-    >
-      <div>
-        <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
-          Advertisement
-        </p>
-        <p className="mt-1 text-xs text-slate-500">{label}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function Home() {
   return (
-    <main dir="ltr" className="min-h-screen bg-[#f5f7fb] text-slate-900">
+    <main className="min-h-screen bg-gray-950 text-white">
       {/* Header */}
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-          <a href="/" className="flex items-center gap-2">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-xl text-white">
-              ▶
-            </span>
-            <span className="text-lg font-bold tracking-tight">
-              Live<span className="text-emerald-600">Pakistan</span>
-            </span>
+      <header className="border-b border-white/10 bg-gray-950">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5">
+          <a href="/" className="text-2xl font-extrabold tracking-tight">
+            Live<span className="text-green-400">Pakistan</span>
           </a>
 
-          <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700">
-            Pakistan Sports Hub
+          <span className="rounded-full border border-green-400/30 bg-green-400/10 px-3 py-1 text-xs font-semibold text-green-300">
+            Sports Directory
           </span>
         </div>
       </header>
 
-      {/* Top advertisement: desktop and mobile */}
-      <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6">
-        <AdSlot label="Top banner" />
+      {/* Top 320 x 50 Adsterra banner */}
+      <div className="mx-auto flex min-h-[70px] max-w-7xl items-center justify-center px-2 py-3">
+        <AdsterraFrame
+          zoneKey="2a688154fdb324766e6e617b3dcb04cf"
+          width={320}
+          height={50}
+        />
       </div>
 
       {/* Main layout */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-4 py-6 sm:px-6 lg:grid-cols-[160px_minmax(0,1fr)_160px]">
-        {/* Left advertisement: desktop only */}
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-6 lg:grid-cols-[160px_minmax(0,1fr)_160px]">
+        {/* Left sidebar ad - desktop only */}
         <aside className="hidden lg:block">
-          <div className="sticky top-5">
-            <AdSlot label="Left sidebar" className="min-h-[300px]" />
+          <div className="sticky top-6 flex justify-center">
+            <AdsterraFrame
+              zoneKey="94fa28deea03c35c2a5a75920a44ef21"
+              width={160}
+              height={300}
+            />
           </div>
         </aside>
 
         {/* Main content */}
         <section className="min-w-0">
-          <div className="rounded-2xl border border-slate-200 bg-white px-5 py-8 shadow-sm sm:px-8 sm:py-10">
-            <div className="mx-auto max-w-xl text-center">
-              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                MADE FOR PAKISTAN
-              </span>
+          <div className="mb-8 rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900 to-gray-950 p-6 sm:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-green-400">
+              Your Sports Link Directory
+            </p>
 
-              <h1 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Live Sports, <span className="text-emerald-600">One Place</span>
-              </h1>
+            <h1 className="text-3xl font-extrabold leading-tight sm:text-5xl">
+              Welcome to{" "}
+              <span className="text-green-400">LivePakistan</span>
+            </h1>
 
-              <p className="mx-auto mt-4 max-w-md text-sm leading-7 text-slate-600 sm:text-base">
-                Cricket ho ya koi aur match, apni pasandeeda sports service
-                yahan se explore karein. Official links, match updates aur
-                sports info — sab ek simple page par.
-              </p>
-            </div>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-300 sm:text-base">
+              Cricket updates, match information aur sports resources ke liye
+              useful links aik jagah explore karein.
+            </p>
+          </div>
 
-            <div className="mx-auto mt-8 max-w-lg space-y-3">
-              {liveServices.map((service, index) => (
+          <div className="mb-5 flex items-center justify-between gap-3">
+            <h2 className="text-xl font-bold sm:text-2xl">
+              Sports & Cricket Links
+            </h2>
+            <span className="text-xs text-gray-400">
+              Trusted websites
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {sportsLinks.map((item) => (
+              <article
+                key={item.name}
+                className="rounded-xl border border-white/10 bg-gray-900 p-5 transition hover:border-green-400/50"
+              >
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-green-400">
+                  {item.category}
+                </p>
+
+                <h3 className="text-lg font-bold">{item.name}</h3>
+
+                <p className="mt-2 min-h-12 text-sm leading-6 text-gray-400">
+                  {item.description}
+                </p>
+
                 <a
-                  key={service.title}
-                  href={service.href}
+                  href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:bg-emerald-50/50"
+                  className="mt-5 inline-flex items-center rounded-lg bg-green-500 px-4 py-2 text-sm font-semibold text-gray-950 transition hover:bg-green-400"
                 >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg font-bold text-emerald-700">
-                    {index === 0 ? "▶" : index === 1 ? "↗" : "🏏"}
-                  </span>
-
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-semibold">{service.title}</span>
-                    <span className="mt-1 block text-xs leading-5 text-slate-500 sm:text-sm">
-                      {service.subtitle}
-                    </span>
-                  </span>
-
-                  <span className="shrink-0 text-xl text-emerald-600 transition group-hover:translate-x-1">
-                    →
+                  Visit Website
+                  <span className="ml-2" aria-hidden="true">
+                    ↗
                   </span>
                 </a>
-              ))}
-            </div>
+              </article>
+            ))}
+          </div>
 
-            <p className="mt-6 text-center text-xs leading-5 text-slate-400">
-              Broadcast availability aur rights relevant service ke rules par
-              depend karte hain.
+          {/* Content section */}
+          <section className="mt-8 rounded-xl border border-white/10 bg-gray-900 p-5">
+            <h2 className="text-lg font-bold">About LivePakistan</h2>
+            <p className="mt-3 text-sm leading-7 text-gray-400">
+              LivePakistan aik sports resources directory hai jo visitors ko
+              cricket news, scores aur sports-related websites tak pohanchne
+              mein madad deti hai. Har website ka apna content aur access
+              policy hota hai.
             </p>
-          </div>
-
-          {/* Content-area advertisement */}
-          <div className="mt-5">
-            <AdSlot label="Content banner" />
-          </div>
-
-          <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
-            <h2 className="font-bold">Pakistan Sports Updates</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Match schedules, official broadcast information aur sports updates
-              ke liye apni pasandeeda services visit karein.
-            </p>
-          </div>
+          </section>
         </section>
 
-        {/* Right advertisement: desktop only */}
+        {/* Right sidebar ad - desktop only */}
         <aside className="hidden lg:block">
-          <div className="sticky top-5">
-            <AdSlot label="Right sidebar" className="min-h-[300px]" />
+          <div className="sticky top-6 flex justify-center">
+            <AdsterraFrame
+              zoneKey="94fa28deea03c35c2a5a75920a44ef21"
+              width={160}
+              height={300}
+            />
           </div>
         </aside>
       </div>
 
-      {/* Bottom advertisement: desktop and mobile */}
-      <div className="mx-auto max-w-7xl px-4 pb-6 sm:px-6">
-        <AdSlot label="Bottom banner" />
-      </div>
-
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:text-left">
-          <p className="text-sm font-semibold">
-            Live<span className="text-emerald-600">Pakistan</span>
+      <footer className="mt-8 border-t border-white/10 bg-gray-950">
+        <div className="mx-auto max-w-7xl px-4 py-6 text-center">
+          <p className="text-sm text-gray-400">
+            © 2026 LivePakistan. All rights reserved.
           </p>
-
-          <p className="text-xs leading-5 text-slate-500">
-            Independent sports links directory. Not affiliated with the listed
-            services.
+          <p className="mt-2 text-xs text-gray-500">
+            LivePakistan is a sports links directory and is not affiliated
+            with the third-party websites listed above.
           </p>
-
-          <p className="text-xs text-slate-400">© 2026 LivePakistan</p>
         </div>
       </footer>
     </main>
