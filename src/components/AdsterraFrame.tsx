@@ -14,32 +14,33 @@ export default function AdsterraFrame({
   height,
   className = "",
 }: AdsterraFrameProps) {
-  const srcDoc = `<!DOCTYPE html>
+  const srcDoc = `<!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: ${width}px;
-    min-height: ${height}px;
-    overflow: hidden;
-    background: transparent;
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: ${width}px;
+      min-height: ${height}px;
+      overflow: hidden;
+      background: transparent;
+    }
+  </style>
 </head>
 <body>
-<script>
-  var atOptions = {
-    key: "${zoneKey}",
-    format: "iframe",
-    height: ${height},
-    width: ${width},
-    params: {}
-  };
-</script>
-<script src="https://czernik.org/22/${zoneKey}"></script>
+  <script>
+    window.atOptions = {
+      key: "${zoneKey}",
+      format: "iframe",
+      height: ${height},
+      width: ${width},
+      params: {}
+    };
+  </script>
+  <script src="https://czernik.org/22/${zoneKey}"></script>
 </body>
 </html>`;
 
@@ -49,11 +50,17 @@ export default function AdsterraFrame({
       srcDoc={srcDoc}
       width={width}
       height={height}
-      loading="lazy"
+      loading="eager"
       sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
-      referrerPolicy="no-referrer-when-downgrade"
+      referrerPolicy="strict-origin-when-cross-origin"
       className={className}
-      style={{ border: 0, overflow: "hidden" }}
+      style={{
+        display: "block",
+        width,
+        height,
+        border: 0,
+        overflow: "hidden",
+      }}
     />
   );
 }
