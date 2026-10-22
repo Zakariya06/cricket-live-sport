@@ -14,11 +14,11 @@ export default function AdsterraFrame({
   height,
   className = "",
 }: AdsterraFrameProps) {
-  const srcDoc = `<!doctype html>
+  const srcDoc = `<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html, body {
       margin: 0;
@@ -51,7 +51,6 @@ export default function AdsterraFrame({
       width={width}
       height={height}
       loading="eager"
-      sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
       referrerPolicy="strict-origin-when-cross-origin"
       className={className}
       style={{
