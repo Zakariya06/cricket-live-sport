@@ -1,4 +1,3 @@
-
 const liveServices = [
   {
     title: "Tamasha TV",
@@ -44,10 +43,7 @@ function AdSlot({
 
 export default function Home() {
   return (
-    <main
-      dir="ltr"
-      className="min-h-screen bg-[#f5f7fb] text-slate-900"
-    >
+    <main dir="ltr" className="min-h-screen bg-[#f5f7fb] text-slate-900">
       {/* Header */}
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
@@ -73,14 +69,10 @@ export default function Home() {
 
       {/* Main layout */}
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-4 py-6 sm:px-6 lg:grid-cols-[160px_minmax(0,1fr)_160px]">
-
         {/* Left advertisement: desktop only */}
         <aside className="hidden lg:block">
           <div className="sticky top-5">
-            <AdSlot
-              label="Left sidebar"
-              className="min-h-[300px]"
-            />
+            <AdSlot label="Left sidebar" className="min-h-[300px]" />
           </div>
         </aside>
 
@@ -98,10 +90,9 @@ export default function Home() {
               </h1>
 
               <p className="mx-auto mt-4 max-w-md text-sm leading-7 text-slate-600 sm:text-base">
-                Cricket ho ya koi aur match, apni pasandeeda
-                sports service yahan se explore karein.
-                Official links, match updates aur sports info
-                — sab ek simple page par.
+                Cricket ho ya koi aur match, apni pasandeeda sports service
+                yahan se explore karein. Official links, match updates aur
+                sports info — sab ek simple page par.
               </p>
             </div>
 
@@ -119,9 +110,7 @@ export default function Home() {
                   </span>
 
                   <span className="min-w-0 flex-1">
-                    <span className="block font-semibold">
-                      {service.title}
-                    </span>
+                    <span className="block font-semibold">{service.title}</span>
                     <span className="mt-1 block text-xs leading-5 text-slate-500 sm:text-sm">
                       {service.subtitle}
                     </span>
@@ -135,8 +124,8 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-center text-xs leading-5 text-slate-400">
-              Broadcast availability aur rights relevant
-              service ke rules par depend karte hain.
+              Broadcast availability aur rights relevant service ke rules par
+              depend karte hain.
             </p>
           </div>
 
@@ -148,9 +137,8 @@ export default function Home() {
           <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
             <h2 className="font-bold">Pakistan Sports Updates</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Match schedules, official broadcast information
-              aur sports updates ke liye apni pasandeeda
-              services visit karein.
+              Match schedules, official broadcast information aur sports updates
+              ke liye apni pasandeeda services visit karein.
             </p>
           </div>
         </section>
@@ -158,10 +146,7 @@ export default function Home() {
         {/* Right advertisement: desktop only */}
         <aside className="hidden lg:block">
           <div className="sticky top-5">
-            <AdSlot
-              label="Right sidebar"
-              className="min-h-[300px]"
-            />
+            <AdSlot label="Right sidebar" className="min-h-[300px]" />
           </div>
         </aside>
       </div>
@@ -179,13 +164,11 @@ export default function Home() {
           </p>
 
           <p className="text-xs leading-5 text-slate-500">
-            Independent sports links directory. Not affiliated
-            with the listed services.
+            Independent sports links directory. Not affiliated with the listed
+            services.
           </p>
 
-          <p className="text-xs text-slate-400">
-            © {new Date().getFullYear()} LivePakistan
-          </p>
+          <p className="text-xs text-slate-400">© 2026 LivePakistan</p>
         </div>
       </footer>
     </main>
